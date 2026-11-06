@@ -1,0 +1,17 @@
+---
+applications:
+  - name: sfsf-assistant-mem
+    memory: 512M
+    disk_quota: 1G
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    command: python -m app
+    env:
+      MODEL_NAME: gpt-4.1
+      AICORE_RESOURCE_GROUP: default
+    services:
+      - sfsf-assistant-dest
+    routes:
+      # Replace with your actual CF route, e.g. my-agent.cfapps.eu10.hana.ondemand.com
+      - route: <app-name>.cfapps.<landscape>.hana.ondemand.com

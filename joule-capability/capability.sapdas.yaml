@@ -1,0 +1,12 @@
+schema_version: 3.28.0
+
+metadata:
+  namespace: joule.ext
+  name: sfsf_assistant_mem_a2a
+  version: 1.0.0
+  display_name: "SFSF HR Assistant"
+  description: "A helpful HR assistant that queries employee data, leave balances, and org chart information from SAP SuccessFactors"
+
+system_aliases:
+  SfsfAssistantMem:
+    destination: SfsfAssistantMem_A2A

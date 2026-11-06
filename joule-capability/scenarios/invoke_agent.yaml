@@ -1,0 +1,25 @@
+description: >
+  Call this agent for any HR-related questions about employees in SAP SuccessFactors.
+  This includes looking up employee profiles (job title, department, email, location),
+  checking leave or absence balances, viewing direct reports or org chart hierarchies,
+  and searching for employees by name or department.
+  Examples: "What is John Smith's current job title?",
+  "How many vacation days does Jane Doe have left?",
+  "Who are the direct reports of manager 00001234?",
+  "Show me the org chart for the Engineering department",
+  "Search for employees named Garcia in the Finance department".
+
+target:
+  type: function
+  name: call_agent
+  parameters:
+    - name: contextId
+      value: $capability_context.contextId
+    - name: taskId
+      value: $capability_context.taskId
+
+capability_context:
+  - name: contextId
+    value: $target_result.contextId
+  - name: taskId
+    value: $target_result.taskId
